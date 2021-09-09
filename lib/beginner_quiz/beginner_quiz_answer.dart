@@ -13,7 +13,7 @@ class BeginnerQuizAnswer extends StatelessWidget {
       return Scaffold(
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(32.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -66,7 +66,7 @@ class BeginnerQuizAnswer extends StatelessWidget {
                     : Container(),
                 model.counter == 5
                     ? Text(
-                        "ぜんもんせいかい　やったね！😊　しょきゅうクリアだ！",
+                        "ぜんもんせいかい　やったね！😊　しょうがくせいれべる　クリアだ！",
                         style: TextStyle(fontSize: 24),
                       )
                     : Container(),

@@ -20,13 +20,14 @@ class QuestionPageTemplate extends StatelessWidget {
   final double w = 256;
   final double h = 64;
 
+  final AudioCache _player = AudioCache(prefix: 'assets/sounds/');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          AppBackGround(),
-          Center(
+      body: Stack(children: [
+        AppBackGround(),
+        Center(
           child: Consumer<CounterStore>(builder: (context, model, child) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -34,12 +35,20 @@ class QuestionPageTemplate extends StatelessWidget {
                 //問題
                 Padding(
                   padding: const EdgeInsets.all(24.0),
-                  child: Text(
-                    question,
-                    style: TextStyle(
-                      color: Colors.indigo,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                  child: Container(
+                    width: 256,
+                    height: 128,
+                    color: Colors.black.withOpacity(0.6),
+                    child: Center(
+                      child: Text(
+                        question,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 16,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -54,8 +63,14 @@ class QuestionPageTemplate extends StatelessWidget {
                       onPressed: () {
                         showConfirmDialog1(context, flag1, widget);
                         flag1 ? model.incrementCounter() : Container();
+                        flag1
+                            ? _player.play('seikai.mp3')
+                            : _player.play('huseikai.mp3');
                       },
-                      child: Text(c1)),
+                      child: Text(
+                        c1,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
                 ),
                 SizedBox(
                   height: 32,
@@ -67,8 +82,14 @@ class QuestionPageTemplate extends StatelessWidget {
                       onPressed: () {
                         showConfirmDialog2(context, flag2, widget);
                         flag2 ? model.incrementCounter() : Container();
+                        flag2
+                            ? _player.play('seikai.mp3')
+                            : _player.play('huseikai.mp3');
                       },
-                      child: Text(c2)),
+                      child: Text(
+                        c2,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
                 ),
                 SizedBox(
                   height: 32,
@@ -80,14 +101,20 @@ class QuestionPageTemplate extends StatelessWidget {
                       onPressed: () {
                         showConfirmDialog3(context, flag3, widget);
                         flag3 ? model.incrementCounter() : Container();
+                        flag3
+                            ? _player.play('seikai.mp3')
+                            : _player.play('huseikai.mp3');
                       },
-                      child: Text(c3)),
+                      child: Text(
+                        c3,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
                 ),
               ],
             );
           }),
-        ),]
-      ),
+        ),
+      ]),
     );
   }
 }
@@ -98,7 +125,7 @@ Future showConfirmDialog1(BuildContext context, flag1, widget) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: flag1 ? Text('正解！') : Text('不正解！'),
+        title: flag1 ? Text('正解！') : Text('不正解・・・'),
         actions: <Widget>[
           ElevatedButton(
               child: Text('次の問題へ'),
@@ -122,7 +149,7 @@ Future showConfirmDialog2(BuildContext context, flag2, widget) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: flag2 ? Text('正解！') : Text('不正解！'),
+        title: flag2 ? Text('正解！') : Text('不正解・・・'),
         actions: <Widget>[
           ElevatedButton(
               child: Text('次の問題へ'),
@@ -146,7 +173,7 @@ Future showConfirmDialog3(BuildContext context, flag3, widget) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: flag3 ? Text('正解！') : Text('不正解！'),
+        title: flag3 ? Text('正解！') : Text('不正解・・・'),
         actions: <Widget>[
           ElevatedButton(
               child: Text('次の問題へ'),

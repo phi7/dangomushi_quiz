@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:quiz_app/home_page/advanced_button.dart';
 import 'package:quiz_app/home_page/beginner_button.dart';
 import 'package:quiz_app/home_page/title_area.dart';
 import 'package:quiz_app/home_page/title_picture.dart';
-import '../count_store.dart';
 import 'intermediate_button.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -25,21 +23,17 @@ class MyHomePage extends StatelessWidget {
             TitleArea(),
             //絵をのせる
             TitlePicture(),
-            SizedBox(
-              height: 32,
-            ),
+            Expanded(child: Container()),
             //初級ボタン
             BeginnerButton(),
-            SizedBox(
-              height: 32,
-            ),
+            Expanded(child: Container()),
             //中級ボタン
             IntermediateButton(),
-            SizedBox(
-              height: 32,
-            ),
+            Expanded(child: Container()),
             //ダンゴム神ボタン
             AdvancedButton(),
+            Expanded(child: Container()),
+            Expanded(child: Container()),
           ],
         ),
       ),

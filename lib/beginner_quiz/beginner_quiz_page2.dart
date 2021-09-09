@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/count_store.dart';
@@ -5,6 +6,8 @@ import 'package:quiz_app/count_store.dart';
 import 'beginner_quiz_page3.dart';
 
 class BeginnerQuizPage2 extends StatelessWidget {
+  final AudioCache _player = AudioCache(prefix: 'assets/sounds/');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +39,14 @@ class BeginnerQuizPage2 extends StatelessWidget {
                   height: 32,
                   child: ElevatedButton(
                       onPressed: () {
+                        _player.play('huseikai.mp3');
                         //正解か不正解のコード
                         showDialog(
                           barrierDismissible: false,
                           context: context,
                           builder: (BuildContext context) {
                             return AlertDialog(
-                              title: Text('不正解！'),
+                              title: Text('不正解・・・'),
                               actions: <Widget>[
                                 ElevatedButton(
                                     child: Text('次の問題へ'),
@@ -68,6 +72,7 @@ class BeginnerQuizPage2 extends StatelessWidget {
                     height: 32,
                     child: ElevatedButton(
                         onPressed: () {
+                          _player.play('seikai.mp3');
                           showDialog(
                             barrierDismissible: false,
                             context: context,
