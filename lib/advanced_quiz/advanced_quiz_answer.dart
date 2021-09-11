@@ -2,6 +2,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quiz_app/ad_for_banner.dart';
 import '../count_store.dart';
 
 class AdvancedQuizAnswer extends StatelessWidget {
@@ -19,6 +20,7 @@ class AdvancedQuizAnswer extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Expanded(child: Column()),
                 Text(
                   "せいかいすう",
                   style: TextStyle(
@@ -82,6 +84,14 @@ class AdvancedQuizAnswer extends StatelessWidget {
                       model.counter = 0;
                     },
                     child: Text("もういちど　ちょうせんする！")),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      AdForBanner(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

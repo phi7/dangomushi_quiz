@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'count_store.dart';
 import 'home_page/home.dart';
+import 'package:flutter/foundation.dart';
 
-void main() {
+const Map<String, String> UNIT_ID = kReleaseMode
+    ? {
+        'ios': '[YOUR iOS AD UNIT ID]',
+        'android': '[YOUR ANDROID AD UNIT ID]',
+      }
+    : {
+        'ios': 'ca-app-pub-3940256099942544/2934735716',
+        'android': 'ca-app-pub-3940256099942544/6300978111',
+      };
+
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await MobileAds.instance.initialize();
   //向き指定
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,//縦固定
+    DeviceOrientation.portraitUp, //縦固定
   ]);
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,5 +44,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

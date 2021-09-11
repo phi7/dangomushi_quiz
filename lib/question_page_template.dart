@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'ad_for_banner.dart';
 import 'app_background.dart';
 import 'count_store.dart';
 
@@ -32,6 +33,7 @@ class QuestionPageTemplate extends StatelessWidget {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Expanded(child: Column()),
                 //問題
                 Padding(
                   padding: const EdgeInsets.all(24.0),
@@ -109,6 +111,14 @@ class QuestionPageTemplate extends StatelessWidget {
                         c3,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      AdForBanner(),
+                    ],
+                  ),
                 ),
               ],
             );

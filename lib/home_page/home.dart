@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/ad_for_banner.dart';
 import 'package:quiz_app/home_page/advanced_button.dart';
 import 'package:quiz_app/home_page/beginner_button.dart';
 import 'package:quiz_app/home_page/title_area.dart';
@@ -34,6 +35,7 @@ class MyHomePage extends StatelessWidget {
             AdvancedButton(),
             Expanded(child: Container()),
             Expanded(child: Container()),
+            AdForBanner(),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quiz_app/ad_for_banner.dart';
 import 'package:quiz_app/count_store.dart';
 import 'beginner_quiz_page1.dart';
 
@@ -13,6 +14,7 @@ class BeginnerQuizPage0 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Expanded(child: Column()),
             Text("Q１ダンゴムシはどっち？"),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -104,6 +106,14 @@ class BeginnerQuizPage0 extends StatelessWidget {
                   );
                 }),
               ],
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  AdForBanner(),
+                ],
+              ),
             ),
           ],
         ),
