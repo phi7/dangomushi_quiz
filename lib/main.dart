@@ -8,8 +8,8 @@ import 'package:flutter/foundation.dart';
 
 const Map<String, String> UNIT_ID = kReleaseMode
     ? {
-        'ios': '[YOUR iOS AD UNIT ID]',
-        'android': '[YOUR ANDROID AD UNIT ID]',
+        'ios': 'ca-app-pub-8435123425900656/7849378003',
+        'android': 'ca-app-pub-8435123425900656/2309083199',
       }
     : {
         'ios': 'ca-app-pub-3940256099942544/2934735716',
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.brown,
         ),
-        home: MyHomePage(title: 'めざせ　だんごむし　ますたー！'),
+        home: MyHomePage(title: 'めざせ　だんごむし　ますたー！!'),
       ),
     );
   }

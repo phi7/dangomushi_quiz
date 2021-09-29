@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 class TitlePicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       child: Center(
         child: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
           Image.asset(
             "images/img_1.png",
-            width: 888,
-            height: 256,
+            width: deviceWidth*0.8,
+            height: deviceHeight*0.3,
           ),
           Image.asset(
             "images/img_2.png",
-            height: 200.0,
-            width: 200.0,
+            width: deviceWidth*0.5,
+            height: deviceHeight*0.2,
           ),
         ]),
       ),

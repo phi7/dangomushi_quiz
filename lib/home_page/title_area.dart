@@ -5,6 +5,8 @@ class TitleArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -14,7 +16,7 @@ class TitleArea extends StatelessWidget {
                 "ダンゴムシ",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 64,
+                  fontSize: deviceHeight*0.07,
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -25,14 +27,14 @@ class TitleArea extends StatelessWidget {
                     "　クイズ",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 64,
+                      fontSize: deviceHeight*0.07,
                       color: Theme.of(context).primaryColor,
                     ),
                   ),
                   Image.asset(
                     "images/title_rolly_polly.png",
-                    height: 64.0,
-                    width: 64.0,
+                    height: deviceHeight*0.07,
+                    width: deviceHeight*0.07,
                   ),
                 ],
               ),

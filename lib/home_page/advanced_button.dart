@@ -8,10 +8,12 @@ class AdvancedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       child: SizedBox(
-        width: 256,
-        height: 32,
+        width: deviceWidth*0.6,
+        height: deviceHeight*0.04,
         child: ElevatedButton(
           onPressed: () {
             _player.play('sound1.mp3');
